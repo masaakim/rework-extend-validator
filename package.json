@@ -4,16 +4,24 @@
   "description": "Rework plugin to validate properties when use `(extend|inherit)s:`",
   "main": "index.js",
   "scripts": {
-    "test": "tape test"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/morishitter/rework-extend-validator/git"
   },
-  "keywords": ["rework plugin property"],
+  "keywords": [
+    "css"
+    "rework",
+    "plugin",
+    "property"
+  ],
   "author": "Masaaki Morishita",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
+    "rework-inherit": "^0.2.3",
+    "chai": "^1.9.1",
+    "mocha": "^1.21.0",
+    "rework": "^1.0.0"
   }
 }
