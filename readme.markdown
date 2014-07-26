@@ -2,26 +2,52 @@
 
 Rework plugin to validate properties when use `(extend|inherit)s:`.
 
-Thorow error when extended rules have same properties.
-
 ## Installation
 
 ```shell
 $ npm install rework-extend-validator
 ```
 
-## Example
+## Use
+
+Use with [rework-inherit](https://github.com/reworkcss/rework-inherit/).
 
 ```javascript
+// Dependencies
 var rework = require('rework');
 var validator = require('rework-extend-validator');
 var extend = require('rework-inherit')();
 var fs = require('fs');
 
+// CSS to be processed
 var css = fs.readFileSync('test/fixtures/test-1.css', 'utf-8').trim();
 
+// Process CSS using rework-extend-validator
 rework(css).use(validator).use(extend).toString();
 ```
+
+## Example
+
+Throw error if extended rules have same properties.
+
+```css
+.foo {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.bar {
+  color: #fff;
+  font-size: 14px;
+}
+
+.baz {
+  extend: .foo;
+  extend: .bar;
+}
+```
+
+Run **error**.
 
 ## License
 
