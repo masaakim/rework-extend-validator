@@ -12,6 +12,17 @@ $ npm install rework-extend-validator
 
 ## Example
 
+```javascript
+var rework = require('rework');
+var validator = require('rework-extend-validator');
+var extend = require('rework-inherit')();
+var fs = require('fs');
+
+var css = fs.readFileSync('test/fixtures/test-1.css', 'utf-8').trim();
+
+rework(css).use(validator).use(extend).toString();
+```
+
 ## License
 
 The MIT License (MIT)

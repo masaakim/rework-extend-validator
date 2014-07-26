@@ -1,15 +1,8 @@
-var validator = require('./');
 var rework = require('rework');
+var validator = require('./');
 var extend = require('rework-inherit')();
 var fs = require('fs');
 
+var css = fs.readFileSync('test/fixtures/test-1.css', 'utf-8').trim();
 
-function fixture (name) {
-    return fs.readFileSync('test/fixtures/' + name + '.css', 'utf-8').trim();
-}
-
-
-rework(fixture('test-1'))
-.use(validator)
-.use(extend)
-.toString();
+rework(css).use(validator).use(extend).toString();
