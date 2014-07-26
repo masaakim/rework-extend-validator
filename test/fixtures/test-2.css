@@ -1,0 +1,12 @@
+%foo {
+  font-size: 14px;
+}
+
+%bar {
+  padding: 5px 10px;
+}
+
+.hoge {
+  extend: %foo;
+  extend: %bar;
+}
