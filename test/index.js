@@ -30,18 +30,26 @@ function output (name) {
 
 describe('rework-extend-validator', function () {
     it('test-1', function () {
-        //var result = output('test-1');
         var result = function () {
-            return rework(fixture(name))
+            return rework(fixture('test-1'))
             .use(validator)
             .use(extend)
             .toString();
         };
-        // expect(result).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
-        expect(result).to.Throw(Error);
+        expect(result).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
     });
 
     it('test-2', function () {
         compareFixtures('test-2');
+    });
+
+    it('test-3', function () {
+        var result = function () {
+            return rework(fixture('test-3'))
+            .use(validator)
+            .use(extend)
+            .toString();
+        };
+        expect(result).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
     });
 });
