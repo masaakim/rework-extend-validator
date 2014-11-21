@@ -33,7 +33,7 @@ module.exports = function (ast, rework) {
 
                         tmp_matched_rules.forEach(function (tmp_rule) {
                             tmp_rule.declarations.forEach(function (tmp_dec) {
-                                if (dec.property === tmp_dec.property) {
+                                if (dec.property === tmp_dec.property && !dec.property.match(/^(inherit|extend)s?$/i)) {
                                     var err = new Error('rework-extend-validator: extended rules have same properties');
                                     throw err;
                                 }

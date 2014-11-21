@@ -52,4 +52,8 @@ describe('rework-extend-validator', function () {
         };
         expect(result).to.Throw(Error, 'rework-extend-validator: extended rules have same properties');
     });
+
+    it('test-4', function () {
+        compareFixtures('test-4');
+    });
 });
